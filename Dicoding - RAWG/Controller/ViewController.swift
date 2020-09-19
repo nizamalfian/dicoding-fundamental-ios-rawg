@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var imageInfo: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Poppins-Bold", size: 18)!]
     }
 
 
