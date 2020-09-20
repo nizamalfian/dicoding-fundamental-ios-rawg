@@ -18,7 +18,8 @@ class ViewController: UIViewController {
 
 
     @IBAction func onInfoClicked(_ sender: UIBarButtonItem) {
-        
+        let about = AboutViewController(nibName: "AboutViewController", bundle: nil)
+        self.navigationController?.pushViewController(about, animated: true)
     }
 }
 

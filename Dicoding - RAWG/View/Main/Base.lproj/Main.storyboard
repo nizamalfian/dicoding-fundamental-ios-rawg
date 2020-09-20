@@ -69,7 +69,7 @@
         <!--About Me-->
         <scene sceneID="vZo-qT-n5o">
             <objects>
-                <viewController id="iW4-zm-gZp" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AboutMeViewController" id="iW4-zm-gZp" customClass="AboutMeViewController" customModule="Dicoding___RAWG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="b9l-RZ-qcV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
