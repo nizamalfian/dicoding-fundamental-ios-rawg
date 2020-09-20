@@ -31,7 +31,8 @@ class AboutViewController: UIViewController {
         self.navigationController?.navigationBar.backIndicatorImage = backImage
         self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = backImage
         self.navigationItem.title = "About Me"
-//        self.navigationController?.navigationBar.back = [.foregroundColor: UIColor(hex: "#B93760")!]
+        
+        self.navigationController!.navigationBar.tintColor = #colorLiteral(red: 0.7254901961, green: 0.2156862745, blue: 0.3764705882, alpha: 1)
     }
     
     private func setData() {
