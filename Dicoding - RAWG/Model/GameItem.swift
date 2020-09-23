@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 struct GameItem {
+    let id: Int
     let imgUrl: String
     let name: String
     let rating: Double

@@ -41,7 +41,7 @@
                         <rect key="frame" x="122" y="83" width="20" height="20"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2009-11-17" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MLG-oI-2h6">
-                        <rect key="frame" x="142" y="82" width="71" height="20"/>
+                        <rect key="frame" x="146" y="82" width="71" height="20"/>
                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -54,7 +54,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hed-ep-wwD">
-                        <rect key="frame" x="142" y="59" width="20" height="20"/>
+                        <rect key="frame" x="146" y="59" width="20" height="20"/>
                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -68,13 +68,13 @@
                     <constraint firstAttribute="bottom" secondItem="rOk-RO-DsL" secondAttribute="bottom" id="HB6-PW-FcL"/>
                     <constraint firstItem="XZp-3V-qzp" firstAttribute="leading" secondItem="rOk-RO-DsL" secondAttribute="trailing" constant="8" id="MXt-7y-0Zn"/>
                     <constraint firstItem="XZp-3V-qzp" firstAttribute="leading" secondItem="P9S-kb-5T5" secondAttribute="leading" id="Mzu-DV-xLh"/>
-                    <constraint firstItem="MLG-oI-2h6" firstAttribute="leading" secondItem="XZp-3V-qzp" secondAttribute="trailing" id="SVH-or-Tac"/>
+                    <constraint firstItem="MLG-oI-2h6" firstAttribute="leading" secondItem="XZp-3V-qzp" secondAttribute="trailing" constant="4" id="SVH-or-Tac"/>
                     <constraint firstItem="MLG-oI-2h6" firstAttribute="top" secondItem="Hed-ep-wwD" secondAttribute="bottom" constant="3" id="VhB-xz-nYq"/>
                     <constraint firstItem="XZp-3V-qzp" firstAttribute="top" secondItem="9N8-bU-k34" secondAttribute="bottom" constant="4" id="Wzb-8b-YIG"/>
                     <constraint firstItem="rOk-RO-DsL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Ysu-Rm-F0V"/>
                     <constraint firstItem="9N8-bU-k34" firstAttribute="top" secondItem="P9S-kb-5T5" secondAttribute="bottom" id="a4P-bY-frW"/>
                     <constraint firstItem="XZp-3V-qzp" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="dp6-3D-0cy"/>
-                    <constraint firstItem="Hed-ep-wwD" firstAttribute="leading" secondItem="9N8-bU-k34" secondAttribute="trailing" id="imm-Sm-Sd7"/>
+                    <constraint firstItem="Hed-ep-wwD" firstAttribute="leading" secondItem="9N8-bU-k34" secondAttribute="trailing" constant="4" id="imm-Sm-Sd7"/>
                     <constraint firstItem="Hed-ep-wwD" firstAttribute="top" secondItem="9N8-bU-k34" secondAttribute="top" id="tIL-pK-SnH"/>
                 </constraints>
             </tableViewCellContentView>
@@ -85,7 +85,7 @@
                 <outlet property="rating" destination="Hed-ep-wwD" id="rOl-2H-c6t"/>
                 <outlet property="releaseDate" destination="MLG-oI-2h6" id="zoV-ST-qpj"/>
             </connections>
-            <point key="canvasLocation" x="-100.00000000000001" y="2.6785714285714284"/>
+            <point key="canvasLocation" x="397" y="46"/>
         </tableViewCell>
     </objects>
     <resources>

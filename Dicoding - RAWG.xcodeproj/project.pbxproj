@@ -16,6 +16,8 @@
 		E15E5719251B754B0054BAE4 /* GameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E15E5717251B754B0054BAE4 /* GameTableViewCell.xib */; };
 		E15E571C251B8D810054BAE4 /* GameItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15E571B251B8D810054BAE4 /* GameItem.swift */; };
 		E15E571E251B8D920054BAE4 /* DummyGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15E571D251B8D920054BAE4 /* DummyGame.swift */; };
+		E15E5722251B9E130054BAE4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15E5720251B9E130054BAE4 /* DetailViewController.swift */; };
+		E15E5723251B9E130054BAE4 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E15E5721251B9E130054BAE4 /* DetailViewController.xib */; };
 		E1E7620A250E7BD700F83E3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E76209250E7BD700F83E3F /* AppDelegate.swift */; };
 		E1E7620C250E7BD700F83E3F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E7620B250E7BD700F83E3F /* SceneDelegate.swift */; };
 		E1E7620E250E7BD700F83E3F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E7620D250E7BD700F83E3F /* ViewController.swift */; };
@@ -34,6 +36,8 @@
 		E15E5717251B754B0054BAE4 /* GameTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameTableViewCell.xib; sourceTree = "<group>"; };
 		E15E571B251B8D810054BAE4 /* GameItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameItem.swift; sourceTree = "<group>"; };
 		E15E571D251B8D920054BAE4 /* DummyGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyGame.swift; sourceTree = "<group>"; };
+		E15E5720251B9E130054BAE4 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		E15E5721251B9E130054BAE4 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		E1E76206250E7BD700F83E3F /* Dicoding - RAWG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dicoding - RAWG.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1E76209250E7BD700F83E3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1E7620B250E7BD700F83E3F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +97,15 @@
 			path = gamecell;
 			sourceTree = "<group>";
 		};
+		E15E571F251B9DF20054BAE4 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				E15E5720251B9E130054BAE4 /* DetailViewController.swift */,
+				E15E5721251B9E130054BAE4 /* DetailViewController.xib */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 		E1E761FD250E7BD700F83E3F = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +156,7 @@
 		E1EB9E86251648BA001F4D81 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E15E571F251B9DF20054BAE4 /* Detail */,
 				E13DCCBE25179F8F008FCCC3 /* About */,
 				E13DCCBD25179F7E008FCCC3 /* Main */,
 				E1E76214250E7BD900F83E3F /* LaunchScreen.storyboard */,
@@ -212,6 +226,7 @@
 				E13DCCBC25179F61008FCCC3 /* AboutViewController.xib in Resources */,
 				E127BCFF251662F90040531F /* Poppins-SemiBold.ttf in Resources */,
 				E15E5719251B754B0054BAE4 /* GameTableViewCell.xib in Resources */,
+				E15E5723251B9E130054BAE4 /* DetailViewController.xib in Resources */,
 				E127BD00251662F90040531F /* Poppins-Bold.ttf in Resources */,
 				E127BD01251662F90040531F /* Poppins-Regular.ttf in Resources */,
 				E1E76213250E7BD900F83E3F /* Assets.xcassets in Resources */,
@@ -233,6 +248,7 @@
 				E1E7620A250E7BD700F83E3F /* AppDelegate.swift in Sources */,
 				E13DCCBB25179F61008FCCC3 /* AboutViewController.swift in Sources */,
 				E1E7620C250E7BD700F83E3F /* SceneDelegate.swift in Sources */,
+				E15E5722251B9E130054BAE4 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

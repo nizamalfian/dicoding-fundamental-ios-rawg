@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -25,14 +25,14 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile" translatesAutoresizingMaskIntoConstraints="NO" id="t10-1l-vIm">
-                    <rect key="frame" x="107" y="54" width="200" height="198"/>
+                    <rect key="frame" x="87.5" y="10" width="200" height="200"/>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="hjj-Ss-z3e" userLabel="NameGroup">
-                    <rect key="frame" x="20" y="262" width="374" height="24"/>
+                    <rect key="frame" x="20" y="220" width="335" height="24"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="as5-R2-q6H" userLabel="NameLabel">
                             <rect key="frame" x="0.0" y="0.0" width="51.5" height="24"/>
@@ -41,7 +41,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NameLabel" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1C-mk-D5I" userLabel="Name">
-                            <rect key="frame" x="187" y="0.0" width="187" height="24"/>
+                            <rect key="frame" x="167.5" y="0.0" width="167.5" height="24"/>
                             <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -49,15 +49,14 @@
                     </subviews>
                 </stackView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X5j-gP-6ZD" userLabel="Separator1">
-                    <rect key="frame" x="20" y="296" width="374" height="1"/>
+                    <rect key="frame" x="20" y="254" width="335" height="1"/>
                     <color key="backgroundColor" red="0.85490196078431369" green="0.85490196078431369" blue="0.85490196078431369" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="uev-xP-HGy"/>
                     </constraints>
                 </view>
-                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" id="LG5-Ls-4dj" userLabel="BirthdayGroup">
-                    <rect key="frame" x="20" y="307" width="374" height="24"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="LG5-Ls-4dj" userLabel="BirthdayGroup">
+                    <rect key="frame" x="20" y="265" width="335" height="24"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birthday" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="igQ-Ex-vCd" userLabel="BirthdayLabel">
                             <rect key="frame" x="0.0" y="0.0" width="71" height="24"/>
@@ -66,7 +65,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BirthdayLabel" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CAe-zc-z5m" userLabel="Birthday">
-                            <rect key="frame" x="187" y="0.0" width="187" height="24"/>
+                            <rect key="frame" x="167.5" y="0.0" width="167.5" height="24"/>
                             <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -75,7 +74,7 @@
                     <viewLayoutGuide key="safeArea" id="8P5-fp-u2L"/>
                 </stackView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fVH-me-7i6" userLabel="Separator2">
-                    <rect key="frame" x="20" y="341" width="374" height="1"/>
+                    <rect key="frame" x="20" y="299" width="335" height="1"/>
                     <color key="backgroundColor" red="0.85490196080000003" green="0.85490196080000003" blue="0.85490196080000003" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="Pqz-vI-NDc"/>
@@ -84,7 +83,7 @@
                     <viewLayoutGuide key="safeArea" id="F0R-3b-gzR"/>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="N0y-UT-ERU" userLabel="EmailGroup">
-                    <rect key="frame" x="20" y="352" width="374" height="24"/>
+                    <rect key="frame" x="20" y="310" width="335" height="24"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDl-sk-IWA" userLabel="EmailLabel">
                             <rect key="frame" x="0.0" y="0.0" width="46.5" height="24"/>
@@ -93,7 +92,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EmailLabel" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxA-bC-dc4" userLabel="Email">
-                            <rect key="frame" x="187" y="0.0" width="187" height="24"/>
+                            <rect key="frame" x="167.5" y="0.0" width="167.5" height="24"/>
                             <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -102,7 +101,7 @@
                     <viewLayoutGuide key="safeArea" id="2P4-4F-JNk"/>
                 </stackView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nKC-Ge-Wfq" userLabel="Separator2">
-                    <rect key="frame" x="20" y="386" width="374" height="1"/>
+                    <rect key="frame" x="20" y="344" width="335" height="1"/>
                     <color key="backgroundColor" red="0.85490196080000003" green="0.85490196080000003" blue="0.85490196080000003" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="2mR-lQ-3cV"/>
@@ -113,6 +112,7 @@
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="LG5-Ls-4dj" secondAttribute="trailing" constant="20" id="5LL-bO-eMl"/>
                 <constraint firstItem="fVH-me-7i6" firstAttribute="top" secondItem="LG5-Ls-4dj" secondAttribute="bottom" constant="10" id="9Sf-Lv-kdx"/>
                 <constraint firstAttribute="trailing" secondItem="fVH-me-7i6" secondAttribute="trailing" constant="20" id="CJz-tF-YeB"/>
                 <constraint firstItem="X5j-gP-6ZD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Qa4-7d-YMC"/>
@@ -131,9 +131,10 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hjj-Ss-z3e" secondAttribute="trailing" constant="20" id="tSX-sJ-p3R"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="N0y-UT-ERU" secondAttribute="trailing" constant="20" id="uE2-6P-0os"/>
                 <constraint firstAttribute="trailing" secondItem="nKC-Ge-Wfq" secondAttribute="trailing" constant="20" id="vfQ-YW-9ea"/>
+                <constraint firstItem="LG5-Ls-4dj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="vwJ-nf-sbO"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="-346.37681159420293" y="60.9375"/>
+            <point key="canvasLocation" x="-347.82608695652175" y="60.267857142857139"/>
         </view>
     </objects>
     <resources>
