@@ -12,6 +12,10 @@
 		E127BD01251662F90040531F /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E127BCFE251662F90040531F /* Poppins-Regular.ttf */; };
 		E13DCCBB25179F61008FCCC3 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13DCCB925179F61008FCCC3 /* AboutViewController.swift */; };
 		E13DCCBC25179F61008FCCC3 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E13DCCBA25179F61008FCCC3 /* AboutViewController.xib */; };
+		E15E5718251B754B0054BAE4 /* GameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15E5716251B754B0054BAE4 /* GameTableViewCell.swift */; };
+		E15E5719251B754B0054BAE4 /* GameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E15E5717251B754B0054BAE4 /* GameTableViewCell.xib */; };
+		E15E571C251B8D810054BAE4 /* GameItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15E571B251B8D810054BAE4 /* GameItem.swift */; };
+		E15E571E251B8D920054BAE4 /* DummyGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15E571D251B8D920054BAE4 /* DummyGame.swift */; };
 		E1E7620A250E7BD700F83E3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E76209250E7BD700F83E3F /* AppDelegate.swift */; };
 		E1E7620C250E7BD700F83E3F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E7620B250E7BD700F83E3F /* SceneDelegate.swift */; };
 		E1E7620E250E7BD700F83E3F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E7620D250E7BD700F83E3F /* ViewController.swift */; };
@@ -26,6 +30,10 @@
 		E127BCFE251662F90040531F /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		E13DCCB925179F61008FCCC3 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		E13DCCBA25179F61008FCCC3 /* AboutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
+		E15E5716251B754B0054BAE4 /* GameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableViewCell.swift; sourceTree = "<group>"; };
+		E15E5717251B754B0054BAE4 /* GameTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameTableViewCell.xib; sourceTree = "<group>"; };
+		E15E571B251B8D810054BAE4 /* GameItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameItem.swift; sourceTree = "<group>"; };
+		E15E571D251B8D920054BAE4 /* DummyGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyGame.swift; sourceTree = "<group>"; };
 		E1E76206250E7BD700F83E3F /* Dicoding - RAWG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dicoding - RAWG.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1E76209250E7BD700F83E3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1E7620B250E7BD700F83E3F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +68,7 @@
 		E13DCCBD25179F7E008FCCC3 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				E15E571A251B75600054BAE4 /* gamecell */,
 				E1E7620D250E7BD700F83E3F /* ViewController.swift */,
 				E1E7620F250E7BD700F83E3F /* Main.storyboard */,
 			);
@@ -73,6 +82,15 @@
 				E13DCCBA25179F61008FCCC3 /* AboutViewController.xib */,
 			);
 			path = About;
+			sourceTree = "<group>";
+		};
+		E15E571A251B75600054BAE4 /* gamecell */ = {
+			isa = PBXGroup;
+			children = (
+				E15E5716251B754B0054BAE4 /* GameTableViewCell.swift */,
+				E15E5717251B754B0054BAE4 /* GameTableViewCell.xib */,
+			);
+			path = gamecell;
 			sourceTree = "<group>";
 		};
 		E1E761FD250E7BD700F83E3F = {
@@ -116,6 +134,8 @@
 		E1EB9E85251648B5001F4D81 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E15E571B251B8D810054BAE4 /* GameItem.swift */,
+				E15E571D251B8D920054BAE4 /* DummyGame.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -191,6 +211,7 @@
 				E1E76216250E7BD900F83E3F /* LaunchScreen.storyboard in Resources */,
 				E13DCCBC25179F61008FCCC3 /* AboutViewController.xib in Resources */,
 				E127BCFF251662F90040531F /* Poppins-SemiBold.ttf in Resources */,
+				E15E5719251B754B0054BAE4 /* GameTableViewCell.xib in Resources */,
 				E127BD00251662F90040531F /* Poppins-Bold.ttf in Resources */,
 				E127BD01251662F90040531F /* Poppins-Regular.ttf in Resources */,
 				E1E76213250E7BD900F83E3F /* Assets.xcassets in Resources */,
@@ -205,7 +226,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E15E5718251B754B0054BAE4 /* GameTableViewCell.swift in Sources */,
 				E1E7620E250E7BD700F83E3F /* ViewController.swift in Sources */,
+				E15E571C251B8D810054BAE4 /* GameItem.swift in Sources */,
+				E15E571E251B8D920054BAE4 /* DummyGame.swift in Sources */,
 				E1E7620A250E7BD700F83E3F /* AppDelegate.swift in Sources */,
 				E13DCCBB25179F61008FCCC3 /* AboutViewController.swift in Sources */,
 				E1E7620C250E7BD700F83E3F /* SceneDelegate.swift in Sources */,
