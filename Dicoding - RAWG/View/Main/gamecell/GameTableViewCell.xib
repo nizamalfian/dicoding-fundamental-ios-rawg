@@ -85,7 +85,7 @@
                 <outlet property="rating" destination="Hed-ep-wwD" id="rOl-2H-c6t"/>
                 <outlet property="releaseDate" destination="MLG-oI-2h6" id="zoV-ST-qpj"/>
             </connections>
-            <point key="canvasLocation" x="397" y="46"/>
+            <point key="canvasLocation" x="395.6521739130435" y="45.535714285714285"/>
         </tableViewCell>
     </objects>
     <resources>

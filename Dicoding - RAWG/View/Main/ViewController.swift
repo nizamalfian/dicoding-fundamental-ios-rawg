@@ -18,6 +18,7 @@ class ViewController: UIViewController {
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Poppins-Bold", size: 18)!]
         
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.register(UINib(nibName: "GameTableViewCell", bundle: nil), forCellReuseIdentifier: "GameCell")
     }
 
@@ -27,7 +28,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UITableViewDataSource {
+extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return games.count
     }
@@ -44,6 +45,12 @@ extension ViewController: UITableViewDataSource {
         } else {
             return UITableViewCell()
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detail = DetailViewController(nibName: "DetailViewController", bundle: nil)
+        detail.gameName = games[indexPath.row].name
+        self.navigationController?.pushViewController(detail, animated: true)
     }
     
 }
