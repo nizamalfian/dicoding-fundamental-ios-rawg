@@ -9,10 +9,27 @@
 import Foundation
 import UIKit
 
-struct GameItem {
+struct GameItem: Codable {
     let id: Int
     let imgUrl: String
     let name: String
     let rating: Double
     let releaseDate: String
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case imgUrl = "background_image"
+        case name
+        case rating
+        case releaseDate = "released"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decode(Int.self, forKey: .id)
+        imgUrl = try container.decode(String.self, forKey: .imgUrl)
+        name = try container.decode(String.self, forKey: .name)
+        rating = try container.decode(Double.self, forKey: .rating)
+        releaseDate = try container.decode(String.self, forKey: .releaseDate)
+    }
 }

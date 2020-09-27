@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var imageInfo: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
     
+    var games = [GameItem]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Poppins-Bold", size: 18)!]
@@ -20,6 +22,30 @@ class ViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: "GameTableViewCell", bundle: nil), forCellReuseIdentifier: "GameCell")
+        loadData()
+    }
+    
+    private func loadData() {
+        let components = URLComponents(string: "https://api.rawg.io/api/games")!
+        let request = URLRequest(url: components.url!)
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let response = response as? HTTPURLResponse, let data = data else { return }
+            if (response.statusCode == 200) {
+                self.decodeJson(data: data)
+            } else {
+                print("ERROR: \(data), HTTP Status: \(response.statusCode)")
+            }
+        }
+        task.resume()
+    }
+    
+    private func decodeJson(data: Data) {
+        let decoder = JSONDecoder()
+        let gameResponse = try! decoder.decode(GameResponse.self, from: data)
+        self.games = gameResponse.games
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
 
     @IBAction func onInfoClicked(_ sender: UIBarButtonItem) {
@@ -29,6 +55,7 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return games.count
     }

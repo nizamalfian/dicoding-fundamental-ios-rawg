@@ -10,6 +10,7 @@
 		E127BCFF251662F90040531F /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E127BCFC251662F80040531F /* Poppins-SemiBold.ttf */; };
 		E127BD00251662F90040531F /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E127BCFD251662F80040531F /* Poppins-Bold.ttf */; };
 		E127BD01251662F90040531F /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E127BCFE251662F90040531F /* Poppins-Regular.ttf */; };
+		E13508DB2520880300FA07CB /* GameResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13508DA2520880300FA07CB /* GameResponse.swift */; };
 		E13DCCBB25179F61008FCCC3 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13DCCB925179F61008FCCC3 /* AboutViewController.swift */; };
 		E13DCCBC25179F61008FCCC3 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E13DCCBA25179F61008FCCC3 /* AboutViewController.xib */; };
 		E15E5718251B754B0054BAE4 /* GameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15E5716251B754B0054BAE4 /* GameTableViewCell.swift */; };
@@ -30,6 +31,7 @@
 		E127BCFC251662F80040531F /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		E127BCFD251662F80040531F /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
 		E127BCFE251662F90040531F /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		E13508DA2520880300FA07CB /* GameResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResponse.swift; sourceTree = "<group>"; };
 		E13DCCB925179F61008FCCC3 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		E13DCCBA25179F61008FCCC3 /* AboutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
 		E15E5716251B754B0054BAE4 /* GameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableViewCell.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			children = (
 				E15E571B251B8D810054BAE4 /* GameItem.swift */,
 				E15E571D251B8D920054BAE4 /* DummyGame.swift */,
+				E13508DA2520880300FA07CB /* GameResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				E13DCCBB25179F61008FCCC3 /* AboutViewController.swift in Sources */,
 				E1E7620C250E7BD700F83E3F /* SceneDelegate.swift in Sources */,
 				E15E5722251B9E130054BAE4 /* DetailViewController.swift in Sources */,
+				E13508DB2520880300FA07CB /* GameResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
