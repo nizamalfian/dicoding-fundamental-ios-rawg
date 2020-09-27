@@ -49,7 +49,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detail = DetailViewController(nibName: "DetailViewController", bundle: nil)
-        detail.gameName = games[indexPath.row].name
+        detail.gameItem = games[indexPath.row]
         self.navigationController?.pushViewController(detail, animated: true)
     }
     
