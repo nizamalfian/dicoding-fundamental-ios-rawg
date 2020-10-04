@@ -16,6 +16,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var website: UIStackView!
     @IBOutlet weak var genres: UILabel!
     @IBOutlet weak var publishers: UILabel!
+    @IBOutlet weak var desc: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()

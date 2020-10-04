@@ -60,8 +60,11 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="uYI-Cg-YiD">
-                        <rect key="frame" x="122" y="30" width="190" height="29"/>
+                        <rect key="frame" x="122" y="30" width="0.0" height="29"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="width" id="D5C-uD-tn4"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="CCG-cs-fCg"/>
                     </view>
                 </subviews>
@@ -72,7 +75,6 @@
                     <constraint firstItem="rOk-RO-DsL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="6gZ-u3-gb9"/>
                     <constraint firstItem="P9S-kb-5T5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="8mR-8Y-1wr"/>
                     <constraint firstAttribute="bottom" secondItem="rOk-RO-DsL" secondAttribute="bottom" id="HB6-PW-FcL"/>
-                    <constraint firstAttribute="trailing" secondItem="uYI-Cg-YiD" secondAttribute="trailing" constant="8" id="HIu-hR-V40"/>
                     <constraint firstItem="uYI-Cg-YiD" firstAttribute="top" secondItem="P9S-kb-5T5" secondAttribute="bottom" id="KCG-WO-UTj"/>
                     <constraint firstItem="XZp-3V-qzp" firstAttribute="leading" secondItem="rOk-RO-DsL" secondAttribute="trailing" constant="8" id="MXt-7y-0Zn"/>
                     <constraint firstItem="XZp-3V-qzp" firstAttribute="leading" secondItem="P9S-kb-5T5" secondAttribute="leading" id="Mzu-DV-xLh"/>
