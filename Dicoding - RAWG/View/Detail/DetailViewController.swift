@@ -10,13 +10,13 @@ import UIKit
 
 class DetailViewController: UIViewController {
     var gameItem: GameItem?
-    @IBOutlet weak var img: UIImageView!
-    @IBOutlet weak var rating: UILabel!
-    @IBOutlet weak var releaseDate: UILabel!
-    @IBOutlet weak var website: UILabel!
-    @IBOutlet weak var genres: UILabel!
-    @IBOutlet weak var publishers: UILabel!
-    @IBOutlet weak var desc: UILabel!
+//    @IBOutlet weak var img: UIImageView!
+//    @IBOutlet weak var rating: UILabel!
+//    @IBOutlet weak var releaseDate: UILabel!
+//    @IBOutlet weak var website: UILabel!
+//    @IBOutlet weak var genres: UILabel!
+//    @IBOutlet weak var publishers: UILabel!
+//    @IBOutlet weak var desc: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,9 +31,9 @@ class DetailViewController: UIViewController {
         
         if let game = gameItem {
             self.navigationItem.title = game.name
-            self.img.loadImage(url: game.imgUrl)
-            self.rating.text = String(format: "%.2f", game.rating)
-            self.releaseDate.text = game.releaseDate
+//            self.img.loadImage(url: game.imgUrl)
+//            self.rating.text = String(format: "%.2f", game.rating)
+//            self.releaseDate.text = game.releaseDate
         }
         
         self.navigationController!.navigationBar.tintColor = #colorLiteral(red: 0.7254901961, green: 0.2156862745, blue: 0.3764705882, alpha: 1)
@@ -59,8 +59,8 @@ class DetailViewController: UIViewController {
         let decoder = JSONDecoder()
         let gameDetailResponse = try! decoder.decode(GameDetailResponse.self, from: data)
         DispatchQueue.main.async {
-            self.website.text = gameDetailResponse.website
-            self.desc.text = gameDetailResponse.description
+//            self.website.text = gameDetailResponse.website
+//            self.desc.text = gameDetailResponse.description
             
             var genres = "-"
             if gameDetailResponse.genres.isEmpty == false {
@@ -74,7 +74,7 @@ class DetailViewController: UIViewController {
                     }
                     
                     genres = genres + item.name + separator
-                    self.genres.text = genres
+//                    self.genres.text = genres
                 }
             }
             
@@ -90,7 +90,7 @@ class DetailViewController: UIViewController {
                     }
                     
                     publishers = publishers + item.name + separator
-                    self.publishers.text = publishers
+//                    self.publishers.text = publishers
                 }
             }
         }
