@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setLeftAlignedNavigationItemTitle("RAWG Video Games", 20)
+        self.setLeftAlignedNavigationItemTitle("RAWG Video Games", 10)
         
         showLoading()
         tableView.dataSource = self
