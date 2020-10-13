@@ -21,24 +21,18 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setBackButton()
         loadData()
+        setData()
     }
-
-    private func setBackButton() {
-        let backImage = UIImage(named: "ic_back")
-        self.navigationController?.navigationBar.backIndicatorImage = backImage
-        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = backImage
-        
+    
+    private func setData() {
         if let game = gameItem {
-            self.navigationItem.title = game.name
+            setBackButton(game.name)
             self.img.loadImage(url: game.imgUrl)
             self.rating.text = String(format: "%.2f", game.rating)
             self.releaseDate.text = game.releaseDate
             self.scrollView.updateContentView()
         }
-        
-        self.navigationController!.navigationBar.tintColor = #colorLiteral(red: 0.7254901961, green: 0.2156862745, blue: 0.3764705882, alpha: 1)
     }
     
     private func loadData() {
@@ -99,6 +93,18 @@ class DetailViewController: UIViewController {
         }
     }
 
+}
+
+extension UIViewController {
+    func setBackButton(_ title: String) {
+        let backImage = UIImage(named: "ic_back")
+        self.navigationController?.navigationBar.backIndicatorImage = backImage
+        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = backImage
+
+        self.navigationItem.title = title
+        
+        self.navigationController!.navigationBar.tintColor = #colorLiteral(red: 0.7254901961, green: 0.2156862745, blue: 0.3764705882, alpha: 1)
+    }
 }
 
 extension UIScrollView {

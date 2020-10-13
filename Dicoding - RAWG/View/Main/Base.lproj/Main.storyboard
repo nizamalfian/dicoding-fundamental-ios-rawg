@@ -40,11 +40,18 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="RAWG Video Games" largeTitleDisplayMode="always" id="kSE-fW-umb">
-                        <barButtonItem key="rightBarButtonItem" title="Info" image="Info" id="I4R-8W-ToN">
-                            <connections>
-                                <action selector="onInfoClicked:" destination="BYZ-38-t0r" id="9Li-QJ-n6e"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Info" image="Info" id="I4R-8W-ToN">
+                                <connections>
+                                    <action selector="onInfoClicked:" destination="BYZ-38-t0r" id="9Li-QJ-n6e"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Bookmark" image="ic_bookmark_red" id="LBR-JK-x0x">
+                                <connections>
+                                    <action selector="onBookmarkClicked:" destination="BYZ-38-t0r" id="cmx-rl-Nr5"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -77,5 +84,6 @@
     </scenes>
     <resources>
         <image name="Info" width="20" height="20"/>
+        <image name="ic_bookmark_red" width="20" height="20"/>
     </resources>
 </document>

@@ -18,6 +18,8 @@
 		E15E571C251B8D810054BAE4 /* GameItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15E571B251B8D810054BAE4 /* GameItem.swift */; };
 		E15E5722251B9E130054BAE4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15E5720251B9E130054BAE4 /* DetailViewController.swift */; };
 		E15E5723251B9E130054BAE4 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E15E5721251B9E130054BAE4 /* DetailViewController.xib */; };
+		E1AE8C1D2535FD3100CB8064 /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AE8C1B2535FD3100CB8064 /* BookmarkViewController.swift */; };
+		E1AE8C1E2535FD3100CB8064 /* BookmarkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1AE8C1C2535FD3100CB8064 /* BookmarkViewController.xib */; };
 		E1E4C1262529AD8600FAA8A6 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E4C1252529AD8600FAA8A6 /* Genre.swift */; };
 		E1E4C1282529ADE300FAA8A6 /* Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E4C1272529ADE300FAA8A6 /* Publisher.swift */; };
 		E1E4C12A2529AE0B00FAA8A6 /* GameDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E4C1292529AE0B00FAA8A6 /* GameDetailResponse.swift */; };
@@ -41,6 +43,8 @@
 		E15E571B251B8D810054BAE4 /* GameItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameItem.swift; sourceTree = "<group>"; };
 		E15E5720251B9E130054BAE4 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		E15E5721251B9E130054BAE4 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		E1AE8C1B2535FD3100CB8064 /* BookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
+		E1AE8C1C2535FD3100CB8064 /* BookmarkViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookmarkViewController.xib; sourceTree = "<group>"; };
 		E1E4C1252529AD8600FAA8A6 /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
 		E1E4C1272529ADE300FAA8A6 /* Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publisher.swift; sourceTree = "<group>"; };
 		E1E4C1292529AE0B00FAA8A6 /* GameDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailResponse.swift; sourceTree = "<group>"; };
@@ -78,7 +82,6 @@
 		E13DCCBD25179F7E008FCCC3 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				E15E571A251B75600054BAE4 /* gamecell */,
 				E1E7620D250E7BD700F83E3F /* ViewController.swift */,
 				E1E7620F250E7BD700F83E3F /* Main.storyboard */,
 			);
@@ -110,6 +113,15 @@
 				E15E5721251B9E130054BAE4 /* DetailViewController.xib */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		E1AE8C1A2535FCE100CB8064 /* Bookmark */ = {
+			isa = PBXGroup;
+			children = (
+				E1AE8C1B2535FD3100CB8064 /* BookmarkViewController.swift */,
+				E1AE8C1C2535FD3100CB8064 /* BookmarkViewController.xib */,
+			);
+			path = Bookmark;
 			sourceTree = "<group>";
 		};
 		E1E761FD250E7BD700F83E3F = {
@@ -165,8 +177,10 @@
 		E1EB9E86251648BA001F4D81 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E1AE8C1A2535FCE100CB8064 /* Bookmark */,
 				E15E571F251B9DF20054BAE4 /* Detail */,
 				E13DCCBE25179F8F008FCCC3 /* About */,
+				E15E571A251B75600054BAE4 /* gamecell */,
 				E13DCCBD25179F7E008FCCC3 /* Main */,
 				E1E76214250E7BD900F83E3F /* LaunchScreen.storyboard */,
 			);
@@ -235,6 +249,7 @@
 				E13DCCBC25179F61008FCCC3 /* AboutViewController.xib in Resources */,
 				E127BCFF251662F90040531F /* Poppins-SemiBold.ttf in Resources */,
 				E15E5719251B754B0054BAE4 /* GameTableViewCell.xib in Resources */,
+				E1AE8C1E2535FD3100CB8064 /* BookmarkViewController.xib in Resources */,
 				E15E5723251B9E130054BAE4 /* DetailViewController.xib in Resources */,
 				E127BD00251662F90040531F /* Poppins-Bold.ttf in Resources */,
 				E127BD01251662F90040531F /* Poppins-Regular.ttf in Resources */,
@@ -254,6 +269,7 @@
 				E1E7620E250E7BD700F83E3F /* ViewController.swift in Sources */,
 				E15E571C251B8D810054BAE4 /* GameItem.swift in Sources */,
 				E1E7620A250E7BD700F83E3F /* AppDelegate.swift in Sources */,
+				E1AE8C1D2535FD3100CB8064 /* BookmarkViewController.swift in Sources */,
 				E13DCCBB25179F61008FCCC3 /* AboutViewController.swift in Sources */,
 				E1E7620C250E7BD700F83E3F /* SceneDelegate.swift in Sources */,
 				E1E4C12A2529AE0B00FAA8A6 /* GameDetailResponse.swift in Sources */,

@@ -18,7 +18,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Poppins-Bold", size: 18)!]
+        self.setLeftAlignedNavigationItemTitle("RAWG Video Games", 20)
+        
         showLoading()
         tableView.dataSource = self
         tableView.delegate = self
@@ -61,7 +62,11 @@ class ViewController: UIViewController {
             self.hideLoading()
         }
     }
-
+    @IBAction func onBookmarkClicked(_ sender: UIBarButtonItem) {
+        let bookmark = BookmarkViewController(nibName: "BookmarkViewController", bundle: nil)
+        self.navigationController?.pushViewController(bookmark, animated: true)
+    }
+    
     @IBAction func onInfoClicked(_ sender: UIBarButtonItem) {
         let about = AboutViewController(nibName: "AboutViewController", bundle: nil)
         self.navigationController?.pushViewController(about, animated: true)
@@ -107,5 +112,29 @@ extension UIImageView {
                 }
             }
         }
+    }
+}
+
+extension ViewController {
+    func setLeftAlignedNavigationItemTitle(_ text: String,
+                                           _ margin: CGFloat) {
+        let titleLabel = UILabel()
+        titleLabel.text = text
+        titleLabel.textAlignment = .left
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.font = UIFont(name: "Poppins-Bold", size: 18)
+        
+        self.navigationItem.titleView = titleLabel
+        
+        guard let containerView = self.navigationItem.titleView?.superview else { return }
+        
+        let leftBarItemWidth = self.navigationItem.leftBarButtonItems?.reduce(0, { $0 + $1.width })
+        
+        NSLayoutConstraint.activate([
+            titleLabel.topAnchor.constraint(equalTo: containerView.topAnchor),
+            titleLabel.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
+            titleLabel.leftAnchor.constraint(equalTo: containerView.leftAnchor,
+                                             constant: (leftBarItemWidth ?? 0) + margin)
+        ])
     }
 }
