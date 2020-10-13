@@ -12,13 +12,14 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var imageInfo: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var loading: UIActivityIndicatorView!
     
     var games = [GameItem]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Poppins-Bold", size: 18)!]
-        
+        showLoading()
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: "GameTableViewCell", bundle: nil), forCellReuseIdentifier: "GameCell")
@@ -39,12 +40,25 @@ class ViewController: UIViewController {
         task.resume()
     }
     
+    private func showLoading() {
+        self.loading.startAnimating()
+        self.loading.isHidden = false
+        self.tableView.isHidden = true
+    }
+    
+    private func hideLoading() {
+        self.loading.stopAnimating()
+        self.loading.isHidden = true
+        self.tableView.isHidden = false
+    }
+    
     private func decodeJson(data: Data) {
         let decoder = JSONDecoder()
         let gameResponse = try! decoder.decode(GameResponse.self, from: data)
         self.games = gameResponse.games
         DispatchQueue.main.async {
             self.tableView.reloadData()
+            self.hideLoading()
         }
     }
 
@@ -75,6 +89,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         let detail = DetailViewController(nibName: "DetailViewController", bundle: nil)
         detail.gameItem = games[indexPath.row]
         self.navigationController?.pushViewController(detail, animated: true)

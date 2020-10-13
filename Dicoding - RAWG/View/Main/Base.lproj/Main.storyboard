@@ -15,18 +15,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kqY-xy-5Dd">
-                                <rect key="frame" x="-95" y="-48" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </tableView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xmM-99-VNu">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="YOG-mg-ROX">
+                                <rect key="frame" x="187" y="428" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="W3e-Xi-hc0"/>
+                                    <constraint firstAttribute="height" constant="40" id="kqq-5Z-AbF"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="YOG-mg-ROX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BIZ-1h-4hi"/>
+                            <constraint firstItem="YOG-mg-ROX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="NXe-gn-l5a"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xmM-99-VNu" secondAttribute="bottom" id="VoQ-ll-XQv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xmM-99-VNu" secondAttribute="trailing" id="XuG-d3-5nC"/>
                             <constraint firstItem="xmM-99-VNu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="aWH-lq-Zpk"/>
@@ -44,6 +48,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="loading" destination="YOG-mg-ROX" id="xJ6-Nj-BX3"/>
                         <outlet property="tableView" destination="xmM-99-VNu" id="fiR-Pt-ttH"/>
                     </connections>
                 </viewController>

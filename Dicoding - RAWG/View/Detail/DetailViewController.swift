@@ -58,44 +58,44 @@ class DetailViewController: UIViewController {
     }
     
     private func decodeJson(data: Data) {
-        let decoder = JSONDecoder()
-        let gameDetailResponse = try! decoder.decode(GameDetailResponse.self, from: data)
-        DispatchQueue.main.async {
-            self.website.text = gameDetailResponse.website
-            self.desc.text = gameDetailResponse.description
-            
-            var genres = "-"
-            if gameDetailResponse.genres.isEmpty == false {
-                genres = ""
-                gameDetailResponse.genres.enumerated().forEach { (index, item) in
-                    let separator: String
-                    if index == gameDetailResponse.genres.count - 1 {
-                        separator = ""
-                    } else {
-                        separator = ", "
+        if let gameDetailResponse = try? JSONDecoder().decode(GameDetailResponse.self, from: data) {
+            DispatchQueue.main.async {
+                self.website.text = gameDetailResponse.website
+                self.desc.text = gameDetailResponse.description
+                
+                var genres = "-"
+                if gameDetailResponse.genres.isEmpty == false {
+                    genres = ""
+                    gameDetailResponse.genres.enumerated().forEach { (index, item) in
+                        let separator: String
+                        if index == gameDetailResponse.genres.count - 1 {
+                            separator = ""
+                        } else {
+                            separator = ", "
+                        }
+                        
+                        genres = genres + item.name + separator
+                        self.genres.text = genres
                     }
-                    
-                    genres = genres + item.name + separator
-                    self.genres.text = genres
                 }
-            }
-            
-            var publishers = "-"
-            if gameDetailResponse.publishers.isEmpty == false {
-                publishers = ""
-                gameDetailResponse.publishers.enumerated().forEach { (index, item) in
-                    let separator: String
-                    if index == gameDetailResponse.publishers.count - 1 {
-                        separator = ""
-                    } else {
-                        separator = ", "
+                
+                var publishers = "-"
+                if gameDetailResponse.publishers.isEmpty == false {
+                    publishers = ""
+                    gameDetailResponse.publishers.enumerated().forEach { (index, item) in
+                        let separator: String
+                        if index == gameDetailResponse.publishers.count - 1 {
+                            separator = ""
+                        } else {
+                            separator = ", "
+                        }
+                        
+                        publishers = publishers + item.name + separator
+                        self.publishers.text = publishers
                     }
-                    
-                    publishers = publishers + item.name + separator
-                    self.publishers.text = publishers
                 }
+                self.scrollView.updateContentView()
             }
-            self.scrollView.updateContentView()
         }
     }
 
