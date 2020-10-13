@@ -15,16 +15,25 @@ class GameTableViewCell: UITableViewCell {
     @IBOutlet weak var rating: UILabel!
     @IBOutlet weak var releaseDate: UILabel!
     @IBOutlet weak var imgBookmark: UIImageView!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        name.sizeToFit()
-    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    }
+    
+    func setData(_ gameItem: GameItem) {
+        self.name.text = gameItem.name
+        self.rating.text = String(format: "%.2f", gameItem.rating)
+        self.releaseDate.text = gameItem.releaseDate
+        self.img.loadImage(url: gameItem.imgUrl)
+        
+        // TODO("set bookmark state based on the local database")
+        
+        imgBookmark.isUserInteractionEnabled = true
+        imgBookmark.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onBookmarkClicked)))
+    }
+    
+    @objc func onBookmarkClicked() {
+        print("Bookmark clicked!!!")
     }
     
 }

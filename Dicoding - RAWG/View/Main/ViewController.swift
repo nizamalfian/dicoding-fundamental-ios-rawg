@@ -81,11 +81,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "GameCell", for: indexPath) as? GameTableViewCell {
-            let gameItem = games[indexPath.row]
-            cell.name.text = gameItem.name
-            cell.rating.text = String(format: "%.2f", gameItem.rating)
-            cell.releaseDate.text = gameItem.releaseDate
-            cell.img.loadImage(url: gameItem.imgUrl)
+            cell.setData(games[indexPath.row])
             
             return cell
         } else {
