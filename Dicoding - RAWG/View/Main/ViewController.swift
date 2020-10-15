@@ -15,10 +15,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var loading: UIActivityIndicatorView!
     
     var games = [GameItem]()
+
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.setLeftAlignedNavigationItemTitle("RAWG Video Games", 10)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setLeftAlignedNavigationItemTitle("RAWG Video Games", 10)
         
         showLoading()
         tableView.dataSource = self

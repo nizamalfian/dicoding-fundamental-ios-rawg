@@ -32,4 +32,12 @@ struct GameItem: Codable {
         rating = try container.decode(Double.self, forKey: .rating)
         releaseDate = try container.decode(String.self, forKey: .releaseDate)
     }
+    
+    init(id: Int, imgUrl: String, name: String, rating: Double, releaseDate: String) {
+        self.id = id
+        self.imgUrl = imgUrl
+        self.name = name
+        self.rating = rating
+        self.releaseDate = releaseDate
+    }
 }

@@ -10,9 +10,29 @@ import UIKit
 
 class BookmarkViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var loading: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackButton("Bookmarks")
+        showLoading()
+    }
+    
+    private func showLoading() {
+        self.loading.startAnimating()
+        self.loading.isHidden = false
+        self.tableView.isHidden = true
+    }
+    
+    private func hideLoading() {
+        self.loading.stopAnimating()
+        self.loading.isHidden = true
+        self.tableView.isHidden = false
+    }
+    
+    private func showEmpty() {
+        
     }
 
 }
