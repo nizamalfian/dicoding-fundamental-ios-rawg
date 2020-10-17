@@ -12,6 +12,7 @@
 		E127BCFF251662F90040531F /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E127BCFC251662F80040531F /* Poppins-SemiBold.ttf */; };
 		E127BD00251662F90040531F /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E127BCFD251662F80040531F /* Poppins-Bold.ttf */; };
 		E127BD01251662F90040531F /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E127BCFE251662F90040531F /* Poppins-Regular.ttf */; };
+		E1344EAA253B0D5300BBB14F /* ImageUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1344EA9253B0D5300BBB14F /* ImageUtils.swift */; };
 		E13508DB2520880300FA07CB /* GameResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13508DA2520880300FA07CB /* GameResponse.swift */; };
 		E13DCCBB25179F61008FCCC3 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13DCCB925179F61008FCCC3 /* AboutViewController.swift */; };
 		E13DCCBC25179F61008FCCC3 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E13DCCBA25179F61008FCCC3 /* AboutViewController.xib */; };
@@ -40,6 +41,7 @@
 		E127BCFC251662F80040531F /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		E127BCFD251662F80040531F /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
 		E127BCFE251662F90040531F /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		E1344EA9253B0D5300BBB14F /* ImageUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUtils.swift; sourceTree = "<group>"; };
 		E13508DA2520880300FA07CB /* GameResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResponse.swift; sourceTree = "<group>"; };
 		E13DCCB925179F61008FCCC3 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		E13DCCBA25179F61008FCCC3 /* AboutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				E14306EE253AB36A009E03AC /* ToastUtil.swift */,
+				E1344EA9253B0D5300BBB14F /* ImageUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				E14306EF253AB36A009E03AC /* ToastUtil.swift in Sources */,
 				E1E4C1282529ADE300FAA8A6 /* Publisher.swift in Sources */,
 				E1E4C1262529AD8600FAA8A6 /* Genre.swift in Sources */,
+				E1344EAA253B0D5300BBB14F /* ImageUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

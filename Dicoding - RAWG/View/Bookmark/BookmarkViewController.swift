@@ -16,7 +16,7 @@ class BookmarkViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setBackButton("Bookmarks")
+        setNavigationBar("Bookmarks")
         showLoading()
     }
     

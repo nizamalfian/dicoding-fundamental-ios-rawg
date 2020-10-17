@@ -9,7 +9,9 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    private lazy var gameProvider: GameProvider = { return GameProvider() }()
     var gameItem: GameItem?
+    private var isBookmarked: Bool?
     @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var rating: UILabel!
     @IBOutlet weak var releaseDate: UILabel!
@@ -27,11 +29,57 @@ class DetailViewController: UIViewController {
     
     private func setData() {
         if let game = gameItem {
-            setBackButton(game.name)
+            setBookmarkState(gameId: game.id)
+            setNavigationBar(game.name)
             self.img.loadImage(url: game.imgUrl)
             self.rating.text = String(format: "%.2f", game.rating)
             self.releaseDate.text = game.releaseDate
             self.scrollView.updateContentView()
+        }
+    }
+    
+    private func setButtonBar(bookmarked: Bool) {
+        let imageAssetName: String
+        if bookmarked {
+            imageAssetName = "ic_bookmark_red"
+        } else {
+            imageAssetName = "ic_unbookmark_red"
+        }
+        
+        self.navigationItem.rightBarButtonItem = menuButton(self, action: #selector(onBookmarkClicked), imageName: imageAssetName)
+        self.isBookmarked = bookmarked
+    }
+    
+    @objc func onBookmarkClicked() {
+        if let game = self.gameItem {
+            if let bookmarked = self.isBookmarked {
+                if bookmarked {
+                    self.showAlert(message: "Are you sure want to unbookmark this game?", positiveConfirmation: "Yes", negativeConfirmation: "Cancel") {
+                        self.gameProvider.deleteGame(game.id) {
+                            DispatchQueue.main.async {
+                                self.setButtonBar(bookmarked: false)
+                                self.showToast(message: "Unbookmarked!")
+                            }
+                        }
+                    }
+                } else {
+                    self.gameProvider.createGame(game.id, game.imgUrl, game.name, game.rating, game.releaseDate) {
+                        DispatchQueue.main.async {
+                            self.setButtonBar(bookmarked: true)
+                            self.showToast(message: "Bookmarked!")
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    private func setBookmarkState(gameId: Int) {
+        self.gameProvider.getGameBookmarkState(gameId) { (bookmarked) in
+            print("Game ID -> \(gameId) | bookmarked -> \(bookmarked)")
+            DispatchQueue.main.async {
+                self.setButtonBar(bookmarked: bookmarked)
+            }
         }
     }
     
@@ -96,14 +144,27 @@ class DetailViewController: UIViewController {
 }
 
 extension UIViewController {
-    func setBackButton(_ title: String) {
+    func setNavigationBar(_ title: String) {
         let backImage = UIImage(named: "ic_back")
         self.navigationController?.navigationBar.backIndicatorImage = backImage
         self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = backImage
 
         self.navigationItem.title = title
         
-        self.navigationController!.navigationBar.tintColor = #colorLiteral(red: 0.7254901961, green: 0.2156862745, blue: 0.3764705882, alpha: 1)
+        self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.7254901961, green: 0.2156862745, blue: 0.3764705882, alpha: 1)
+    }
+    
+    func menuButton(_ target: Any?, action: Selector, imageName: String) -> UIBarButtonItem {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(named: imageName), for: .normal)
+        button.addTarget(target, action: action, for: .touchUpInside)
+
+        let menuBarItem = UIBarButtonItem(customView: button)
+        menuBarItem.customView?.translatesAutoresizingMaskIntoConstraints = false
+        menuBarItem.customView?.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        menuBarItem.customView?.widthAnchor.constraint(equalToConstant: 20).isActive = true
+
+        return menuBarItem
     }
 }
 

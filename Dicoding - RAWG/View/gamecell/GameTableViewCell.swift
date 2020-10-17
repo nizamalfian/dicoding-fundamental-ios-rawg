@@ -25,7 +25,16 @@ class GameTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+    override func awakeFromNib() {
+        print("awakeFromNib")
+        imgBookmark.isUserInteractionEnabled = true
+        imgBookmark.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onBookmarkClicked)))
+    }
+    
     func setData(_ gameItem: GameItem, alertDelegate: AlertDelegate) {
+        if gameItem.id == 3498 {
+            print("setData")
+        }
         self.gameItem = gameItem
         setBookmarkState(gameId: gameItem.id)
         self.name.text = gameItem.name
@@ -33,10 +42,6 @@ class GameTableViewCell: UITableViewCell {
         self.releaseDate.text = gameItem.releaseDate
         self.img.loadImage(url: gameItem.imgUrl)
         
-        // TODO("set bookmark state based on the local database")
-        
-        imgBookmark.isUserInteractionEnabled = true
-        imgBookmark.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onBookmarkClicked)))
         self.alertDelegate = alertDelegate
     }
     
@@ -60,9 +65,7 @@ class GameTableViewCell: UITableViewCell {
     
     @objc func onBookmarkClicked() {
         if let game = self.gameItem {
-            print("Game ID -> \(game.id) | game name -> \(game.name)")
             if let bookmarked = self.isBookmarked {
-                print("Game ID -> \(game.id) | bookmarked -> \(bookmarked)")
                 if bookmarked {
                     self.alertDelegate?.showAlert(message: "Are you sure want to unbookmark this game?", positiveConfirmation: "Yes", negativeConfirmation: "Cancel") {
                         self.gameProvider.deleteGame(game.id) {

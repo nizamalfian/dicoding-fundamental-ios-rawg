@@ -20,16 +20,17 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setLeftAlignedNavigationItemTitle("RAWG Video Games", 10)
+        
+        showLoading()
+        loadData()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        showLoading()
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: "GameTableViewCell", bundle: nil), forCellReuseIdentifier: "GameCell")
-        loadData()
     }
     
     private func loadData() {
