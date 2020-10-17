@@ -17,7 +17,7 @@ class GameTableViewCell: UITableViewCell {
     @IBOutlet weak var releaseDate: UILabel!
     @IBOutlet weak var imgBookmark: UIImageView!
     private var isBookmarked: Bool? = nil
-    private var gameItem: GameItem? = nil
+    var gameItem: GameItem? = nil
     
     private lazy var gameProvider: GameProvider = { return GameProvider() }()
 
@@ -26,15 +26,11 @@ class GameTableViewCell: UITableViewCell {
     }
     
     override func awakeFromNib() {
-        print("awakeFromNib")
         imgBookmark.isUserInteractionEnabled = true
         imgBookmark.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onBookmarkClicked)))
     }
     
     func setData(_ gameItem: GameItem, alertDelegate: AlertDelegate) {
-        if gameItem.id == 3498 {
-            print("setData")
-        }
         self.gameItem = gameItem
         setBookmarkState(gameId: gameItem.id)
         self.name.text = gameItem.name
@@ -47,7 +43,6 @@ class GameTableViewCell: UITableViewCell {
     
     private func setBookmarkState(gameId: Int) {
         self.gameProvider.getGameBookmarkState(gameId) { (bookmarked) in
-            print("Game ID -> \(gameId) | bookmarked -> \(bookmarked)")
             DispatchQueue.main.async {
                 self.setBookmarkIcon(bookmarked: bookmarked)
             }

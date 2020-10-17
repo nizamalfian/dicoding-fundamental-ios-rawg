@@ -16,7 +16,6 @@ class ViewController: UIViewController {
     
     var games = [GameItem]()
 
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setLeftAlignedNavigationItemTitle("RAWG Video Games", 10)

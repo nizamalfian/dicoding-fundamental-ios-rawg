@@ -8,37 +8,87 @@
 
 import UIKit
 
-class BookmarkViewController: UIViewController {
+class BookmarkViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var loading: UIActivityIndicatorView!
     @IBOutlet weak var emptyState: UIStackView!
+    private var gameProvider: GameProvider = { return GameProvider() }()
+    
+    private var games = [GameItem]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationBar("Bookmarks")
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(UINib(nibName: "GameTableViewCell", bundle: nil), forCellReuseIdentifier: "GameCell")
+        loadData()
+    }
+    
+    private func loadData() {
         showLoading()
+        gameProvider.getAllGames { (games) in
+            DispatchQueue.main.async {
+                if games.isEmpty {
+                    self.showEmpty()
+                    self.hideLoading()
+                    return
+                }
+                
+                self.showData(games)
+                self.hideLoading()
+            }
+        }
+    }
+    
+    private func showData(_ games: [GameItem]) {
+        self.tableView.isHidden = false
+        self.games = games
+        self.tableView.reloadData()
     }
     
     private func showLoading() {
         self.loading.startAnimating()
         self.loading.isHidden = false
         self.tableView.isHidden = true
-        hideEmpty()
+        self.hideEmpty()
     }
     
     private func hideLoading() {
         self.loading.stopAnimating()
         self.loading.isHidden = true
-        self.tableView.isHidden = false
     }
     
     private func showEmpty() {
-        emptyState.isHidden = false
+        self.emptyState.isHidden = false
+        self.tableView.isHidden = true
     }
     
     private func hideEmpty() {
-        emptyState.isHidden = true
+        self.emptyState.isHidden = true
     }
-
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return games.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "GameCell", for: indexPath) as? GameTableViewCell {
+            cell.setData(games[indexPath.row], alertDelegate: self)
+            
+            return cell
+        } else {
+            return UITableViewCell()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let detail = DetailViewController(nibName: "DetailViewController", bundle: nil)
+        detail.gameItem = games[indexPath.row]
+        self.navigationController?.pushViewController(detail, animated: true)
+    }
+    
 }

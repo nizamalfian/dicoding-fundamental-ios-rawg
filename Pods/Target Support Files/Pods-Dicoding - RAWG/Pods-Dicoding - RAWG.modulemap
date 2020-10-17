@@ -1,0 +1,6 @@
+framework module Pods_Dicoding___RAWG {
+  umbrella header "Pods-Dicoding - RAWG-umbrella.h"
+
+  export *
+  module * { export * }
+}

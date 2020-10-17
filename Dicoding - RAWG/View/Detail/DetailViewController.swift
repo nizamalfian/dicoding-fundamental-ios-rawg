@@ -76,7 +76,6 @@ class DetailViewController: UIViewController {
     
     private func setBookmarkState(gameId: Int) {
         self.gameProvider.getGameBookmarkState(gameId) { (bookmarked) in
-            print("Game ID -> \(gameId) | bookmarked -> \(bookmarked)")
             DispatchQueue.main.async {
                 self.setButtonBar(bookmarked: bookmarked)
             }
