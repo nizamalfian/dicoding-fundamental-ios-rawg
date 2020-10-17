@@ -9,6 +9,7 @@
 import UIKit
 
 class GameTableViewCell: UITableViewCell {
+    private var alertDelegate: AlertDelegate?
 
     @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var name: UILabel!
@@ -24,7 +25,7 @@ class GameTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func setData(_ gameItem: GameItem) {
+    func setData(_ gameItem: GameItem, alertDelegate: AlertDelegate) {
         self.gameItem = gameItem
         setBookmarkState(gameId: gameItem.id)
         self.name.text = gameItem.name
@@ -36,13 +37,15 @@ class GameTableViewCell: UITableViewCell {
         
         imgBookmark.isUserInteractionEnabled = true
         imgBookmark.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onBookmarkClicked)))
+        self.alertDelegate = alertDelegate
     }
     
     private func setBookmarkState(gameId: Int) {
         self.gameProvider.getGameBookmarkState(gameId) { (bookmarked) in
             print("Game ID -> \(gameId) | bookmarked -> \(bookmarked)")
-            self.setBookmarkIcon(bookmarked: bookmarked)
-            self.isBookmarked = bookmarked
+            DispatchQueue.main.async {
+                self.setBookmarkIcon(bookmarked: bookmarked)
+            }
         }
     }
     
@@ -52,6 +55,7 @@ class GameTableViewCell: UITableViewCell {
         } else {
             self.imgBookmark.image = UIImage(named: "ic_unbookmarked")
         }
+        self.isBookmarked = bookmarked
     }
     
     @objc func onBookmarkClicked() {
@@ -60,14 +64,20 @@ class GameTableViewCell: UITableViewCell {
             if let bookmarked = self.isBookmarked {
                 print("Game ID -> \(game.id) | bookmarked -> \(bookmarked)")
                 if bookmarked {
-                    self.gameProvider.deleteGame(game.id) {
-                        self.setBookmarkIcon(bookmarked: false)
-                        self.showToast(message: "Unbookmarked!")
+                    self.alertDelegate?.showAlert(message: "Are you sure want to unbookmark this game?", positiveConfirmation: "Yes", negativeConfirmation: "Cancel") {
+                        self.gameProvider.deleteGame(game.id) {
+                            DispatchQueue.main.async {
+                                self.setBookmarkIcon(bookmarked: false)
+                                self.alertDelegate?.showToast(message: "Unbookmarked!")
+                            }
+                        }
                     }
                 } else {
                     self.gameProvider.createGame(game.id, game.imgUrl, game.name, game.rating, game.releaseDate) {
-                        self.setBookmarkIcon(bookmarked: true)
-                        self.showToast(message: "Bookmarked!")
+                        DispatchQueue.main.async {
+                            self.setBookmarkIcon(bookmarked: true)
+                            self.alertDelegate?.showToast(message: "Bookmarked!")
+                        }
                     }
                 }
             }

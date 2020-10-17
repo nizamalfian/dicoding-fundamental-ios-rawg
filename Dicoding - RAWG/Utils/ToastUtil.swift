@@ -9,13 +9,13 @@
 import Foundation
 import UIKit
 
-extension UIViewController {
+extension UIViewController : AlertDelegate {
 
     func showToast(message: String) {
         let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width / 2 - 75, y: self.view.frame.size.height - 100, width: 150, height: 35))
         toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
         toastLabel.textColor = UIColor.white
-        toastLabel.font = UIFont(name: "Poppins-Bold", size: 18)!
+        toastLabel.font = UIFont(name: "Poppins-Bold", size: 12)!
         toastLabel.textAlignment = .center;
         toastLabel.text = message
         toastLabel.alpha = 1.0
@@ -28,24 +28,20 @@ extension UIViewController {
             toastLabel.removeFromSuperview()
         })
     }
+    
+    func showAlert(message: String, positiveConfirmation: String, negativeConfirmation: String, onConfirmedAction: @escaping() -> ()) {
+        let confirmedAction = UIAlertAction(title: positiveConfirmation, style: .default) { (action) in
+            onConfirmedAction()
+        }
+        let declinedAction = UIAlertAction(title: negativeConfirmation, style: .cancel, handler: nil)
+        let alert = UIAlertController(title: "Warning!", message: message, preferredStyle: .alert)
+        alert.addAction(confirmedAction)
+        alert.addAction(declinedAction)
+        self.present(alert, animated: true)
+    }
 }
 
-extension UITableViewCell {
-    func showToast(message: String) {
-        let toastLabel = UILabel(frame: CGRect(x: self.contentView.frame.size.width / 2 - 75, y: self.contentView.frame.size.height - 100, width: 150, height: 35))
-        toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
-        toastLabel.textColor = UIColor.white
-        toastLabel.font = UIFont(name: "Poppins-Bold", size: 18)!
-        toastLabel.textAlignment = .center;
-        toastLabel.text = message
-        toastLabel.alpha = 1.0
-        toastLabel.layer.cornerRadius = 10;
-        toastLabel.clipsToBounds  =  true
-        self.contentView.addSubview(toastLabel)
-        UIView.animate(withDuration: 3.0, delay: 0.1, options: .curveEaseOut, animations: {
-            toastLabel.alpha = 0.0
-        }, completion: {(isCompleted) in
-            toastLabel.removeFromSuperview()
-        })
-    }
+protocol AlertDelegate {
+    func showToast(message: String)
+    func showAlert(message: String, positiveConfirmation: String, negativeConfirmation: String, onConfirmedAction: @escaping() -> ())
 }

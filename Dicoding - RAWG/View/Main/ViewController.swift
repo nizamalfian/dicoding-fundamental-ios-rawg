@@ -86,7 +86,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "GameCell", for: indexPath) as? GameTableViewCell {
-            cell.setData(games[indexPath.row])
+            cell.setData(games[indexPath.row], alertDelegate: self)
             
             return cell
         } else {
