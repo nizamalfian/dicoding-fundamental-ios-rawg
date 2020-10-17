@@ -12,6 +12,7 @@ class BookmarkViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var loading: UIActivityIndicatorView!
+    @IBOutlet weak var emptyState: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,7 @@ class BookmarkViewController: UIViewController {
         self.loading.startAnimating()
         self.loading.isHidden = false
         self.tableView.isHidden = true
+        hideEmpty()
     }
     
     private func hideLoading() {
@@ -32,7 +34,11 @@ class BookmarkViewController: UIViewController {
     }
     
     private func showEmpty() {
-        
+        emptyState.isHidden = false
+    }
+    
+    private func hideEmpty() {
+        emptyState.isHidden = true
     }
 
 }

@@ -15,6 +15,7 @@
 		E13508DB2520880300FA07CB /* GameResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13508DA2520880300FA07CB /* GameResponse.swift */; };
 		E13DCCBB25179F61008FCCC3 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13DCCB925179F61008FCCC3 /* AboutViewController.swift */; };
 		E13DCCBC25179F61008FCCC3 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E13DCCBA25179F61008FCCC3 /* AboutViewController.xib */; };
+		E14306EF253AB36A009E03AC /* ToastUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14306EE253AB36A009E03AC /* ToastUtil.swift */; };
 		E15E5718251B754B0054BAE4 /* GameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15E5716251B754B0054BAE4 /* GameTableViewCell.swift */; };
 		E15E5719251B754B0054BAE4 /* GameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E15E5717251B754B0054BAE4 /* GameTableViewCell.xib */; };
 		E15E571C251B8D810054BAE4 /* GameItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15E571B251B8D810054BAE4 /* GameItem.swift */; };
@@ -42,6 +43,7 @@
 		E13508DA2520880300FA07CB /* GameResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResponse.swift; sourceTree = "<group>"; };
 		E13DCCB925179F61008FCCC3 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		E13DCCBA25179F61008FCCC3 /* AboutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
+		E14306EE253AB36A009E03AC /* ToastUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastUtil.swift; sourceTree = "<group>"; };
 		E15E5716251B754B0054BAE4 /* GameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableViewCell.swift; sourceTree = "<group>"; };
 		E15E5717251B754B0054BAE4 /* GameTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameTableViewCell.xib; sourceTree = "<group>"; };
 		E15E571B251B8D810054BAE4 /* GameItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameItem.swift; sourceTree = "<group>"; };
@@ -101,6 +103,14 @@
 			path = About;
 			sourceTree = "<group>";
 		};
+		E14306ED253AB353009E03AC /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E14306EE253AB36A009E03AC /* ToastUtil.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		E15E571A251B75600054BAE4 /* gamecell */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +157,7 @@
 		E1E76208250E7BD700F83E3F /* Dicoding - RAWG */ = {
 			isa = PBXGroup;
 			children = (
+				E14306ED253AB353009E03AC /* Utils */,
 				E127BCFB251662E10040531F /* Fonts */,
 				E1EB9E86251648BA001F4D81 /* View */,
 				E1EB9E85251648B5001F4D81 /* Model */,
@@ -283,6 +294,7 @@
 				E15E5722251B9E130054BAE4 /* DetailViewController.swift in Sources */,
 				E112C37525388B780057D2C3 /* GameModel.xcdatamodeld in Sources */,
 				E13508DB2520880300FA07CB /* GameResponse.swift in Sources */,
+				E14306EF253AB36A009E03AC /* ToastUtil.swift in Sources */,
 				E1E4C1282529ADE300FAA8A6 /* Publisher.swift in Sources */,
 				E1E4C1262529AD8600FAA8A6 /* Genre.swift in Sources */,
 			);

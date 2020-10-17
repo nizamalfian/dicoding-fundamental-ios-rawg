@@ -4,11 +4,18 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BookmarkViewController" customModule="Dicoding___RAWG" customModuleProvider="target">
             <connections>
+                <outlet property="emptyState" destination="BKd-e2-z5v" id="QSl-nG-N5h"/>
                 <outlet property="loading" destination="wVS-Re-ljD" id="ZQg-nS-70I"/>
                 <outlet property="tableView" destination="6vr-LN-wni" id="Ebh-9I-Kao"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -22,6 +29,22 @@
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6vr-LN-wni">
                     <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                 </tableView>
+                <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillProportionally" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="BKd-e2-z5v" userLabel="Empty State">
+                    <rect key="frame" x="147" y="388" width="120" height="120"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_empty_box" id="NIO-Ld-kpR">
+                            <rect key="frame" x="0.0" y="0.0" width="120" height="90"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Empty bookmark" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vtI-Ff-JZY" userLabel="Empty Text">
+                            <rect key="frame" x="0.0" y="98" width="120" height="22"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="wVS-Re-ljD">
                     <rect key="frame" x="197" y="438" width="20" height="20"/>
                 </activityIndicatorView>
@@ -31,12 +54,17 @@
                 <constraint firstItem="6vr-LN-wni" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="7gF-AF-IPf"/>
                 <constraint firstAttribute="bottom" secondItem="6vr-LN-wni" secondAttribute="bottom" id="92C-5C-rfM"/>
                 <constraint firstItem="wVS-Re-ljD" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="CBM-Yr-p1c"/>
+                <constraint firstItem="BKd-e2-z5v" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="OJs-qD-KfE"/>
                 <constraint firstItem="6vr-LN-wni" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="RhH-dH-hGd"/>
                 <constraint firstItem="6vr-LN-wni" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="gL2-4E-Rul"/>
+                <constraint firstItem="BKd-e2-z5v" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ona-Ja-U8f"/>
                 <constraint firstItem="wVS-Re-ljD" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="vYB-b5-SWQ"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="137.68115942028987" y="130.58035714285714"/>
         </view>
     </objects>
+    <resources>
+        <image name="ic_empty_box" width="60" height="60"/>
+    </resources>
 </document>

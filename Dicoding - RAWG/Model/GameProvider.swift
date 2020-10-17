@@ -12,7 +12,7 @@ import CoreData
 
 class GameProvider {
     lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "GameEntity")
+        let container = NSPersistentContainer(name: "GameModel")
         container.loadPersistentStores { storeDescription, error in
             guard error == nil else {
                 fatalError("Unresolved error \(error!)")
@@ -41,20 +41,19 @@ class GameProvider {
                 let results = try taskContext.fetch(fetchRequest)
                 var games: [GameItem] = []
                 for result in results {
-
                     if let id = result.value(forKey: "id") as? Int,
                         let imgUrl = result.value(forKey: "image_url") as? String,
                         let name = result.value(forKey: "name") as? String,
                         let rating = result.value(forKey: "rating") as? Double,
                         let releaseDate = result.value(forKey: "release_date") as? String {
-                        let game = GameItem(
-                            id: id,
-                            imgUrl: imgUrl,
-                            name: name,
-                            rating: rating,
-                            releaseDate: releaseDate
-                        )
-                        games.append(game)
+                            let game = GameItem(
+                                id: id,
+                                imgUrl: imgUrl,
+                                name: name,
+                                rating: rating,
+                                releaseDate: releaseDate
+                            )
+                            games.append(game)
                     }
                 }
                 completion(games)
@@ -87,6 +86,21 @@ class GameProvider {
                         completion(game)
                     }
                 }
+            } catch let error as NSError {
+                print("Could not fetch. \(error), \(error.userInfo)")
+            }
+        }
+    }
+    
+    func getGameBookmarkState(_ id: Int, completion: @escaping(_ bookmarked: Bool) -> ()) {
+        let taskContext = newTaskContext()
+        taskContext.perform {
+            let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "GameEntity")
+            fetchRequest.fetchLimit = 1
+            fetchRequest.predicate = NSPredicate(format: "id == \(id)")
+            do {
+                let results = try taskContext.fetch(fetchRequest)
+                completion(!results.isEmpty)
             } catch let error as NSError {
                 print("Could not fetch. \(error), \(error.userInfo)")
             }
