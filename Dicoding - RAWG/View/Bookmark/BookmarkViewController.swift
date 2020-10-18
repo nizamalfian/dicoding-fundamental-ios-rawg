@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BookmarkViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class BookmarkViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, BookmarkGameDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var loading: UIActivityIndicatorView!
@@ -24,6 +24,9 @@ class BookmarkViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: "GameTableViewCell", bundle: nil), forCellReuseIdentifier: "GameCell")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         loadData()
     }
     
@@ -76,7 +79,7 @@ class BookmarkViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "GameCell", for: indexPath) as? GameTableViewCell {
-            cell.setData(games[indexPath.row], alertDelegate: self)
+            cell.setData(games[indexPath.row], alertDelegate: self, self)
             
             return cell
         } else {
@@ -91,4 +94,7 @@ class BookmarkViewController: UIViewController, UITableViewDataSource, UITableVi
         self.navigationController?.pushViewController(detail, animated: true)
     }
     
+    func refreshData() {
+        loadData()
+    }
 }

@@ -10,6 +10,7 @@ import UIKit
 
 class GameTableViewCell: UITableViewCell {
     private var alertDelegate: AlertDelegate?
+    private var bookmarkGameDelegate: BookmarkGameDelegate?
 
     @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var name: UILabel!
@@ -30,7 +31,7 @@ class GameTableViewCell: UITableViewCell {
         imgBookmark.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onBookmarkClicked)))
     }
     
-    func setData(_ gameItem: GameItem, alertDelegate: AlertDelegate) {
+    func setData(_ gameItem: GameItem, alertDelegate: AlertDelegate, _ bookmarkGameDelegate: BookmarkGameDelegate? = nil) {
         self.gameItem = gameItem
         setBookmarkState(gameId: gameItem.id)
         self.name.text = gameItem.name
@@ -39,6 +40,7 @@ class GameTableViewCell: UITableViewCell {
         self.img.loadImage(url: gameItem.imgUrl)
         
         self.alertDelegate = alertDelegate
+        self.bookmarkGameDelegate = bookmarkGameDelegate
     }
     
     private func setBookmarkState(gameId: Int) {
@@ -66,6 +68,7 @@ class GameTableViewCell: UITableViewCell {
                         self.gameProvider.deleteGame(game.id) {
                             DispatchQueue.main.async {
                                 self.setBookmarkIcon(bookmarked: false)
+                                self.bookmarkGameDelegate?.refreshData()
                                 self.alertDelegate?.showToast(message: "Unbookmarked!")
                             }
                         }
@@ -82,4 +85,8 @@ class GameTableViewCell: UITableViewCell {
         }
     }
     
+}
+
+protocol BookmarkGameDelegate {
+    func refreshData()
 }
